@@ -1,14 +1,14 @@
 using System;
 using Xunit;
 
-namespace Matrix.Tests
+namespace Matrix.Tests.Operators
 {
-    public class OverloadOperators
+    public class BinaryOperatorsTests
     {
         private static readonly Random Random = new Random();
 
         [Fact]
-        public void MatrixSumTest()
+        public void MatrixAdditionTest()
         {
             int rows = 3;
             int columns = 3;
@@ -49,9 +49,9 @@ namespace Matrix.Tests
             var matrix1 = new Matrix(arrayMatrix1);
             var matrix2 = new Matrix(arrayMatrix2);
 
-            for (int i = 0; i < rows; i++)
+            for (var i = 0; i < rows; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (var j = 0; j < columns; j++)
                 {
                     arrayMatrix1[i, j] -= arrayMatrix2[i, j];
                 }
@@ -59,9 +59,9 @@ namespace Matrix.Tests
 
             var resultMatrix = matrix1 - matrix2;
 
-            for (int i = 0; i < rows; i++)
+            for (var i = 0; i < rows; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (var j = 0; j < columns; j++)
                 {
                     Assert.Equal(arrayMatrix1[i, j], resultMatrix[i, j]);
                 }

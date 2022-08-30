@@ -25,9 +25,9 @@ namespace Matrix.Tests.DisplayFunctions
             int rows = matrix.GetLength(0);
             int columns = matrix.GetLength(1);
 
-            for (int i = 0; i < rows; i++, result.Append('\n'))
+            for (var i = 0; i < rows; i++, result.Append('\n'))
             {
-                for (int j = 0; j < columns; j++)
+                for (var j = 0; j < columns; j++)
                 {
                     result.Append(matrix[i, j]);
                     result.Append('\t');
@@ -43,9 +43,9 @@ namespace Matrix.Tests.DisplayFunctions
             int columns = Random.Next(5, 20);
             var matrix = new int[rows, columns];
 
-            for (int i = 0; i < rows; i++)
+            for (var i = 0; i < rows; i++)
             {
-                for (int j = 0; j < columns; j++)
+                for (var j = 0; j < columns; j++)
                 {
                     matrix[i, j] = Random.Next(5, 20);
                 }
