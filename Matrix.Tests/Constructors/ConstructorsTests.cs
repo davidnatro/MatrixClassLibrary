@@ -39,7 +39,7 @@ namespace Matrix.Tests.Constructors
 
             Assert.Equal(parameterMatrix.GetLength(0), matrix.Rows);
             Assert.Equal(parameterMatrix.GetLength(1), matrix.Columns);
-
+            
             for (var i = 0; i < matrix.Rows; i++)
             {
                 for (var j = 0; j < matrix.Columns; j++)
