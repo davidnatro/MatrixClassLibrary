@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Matrix.Tests.Operators
+namespace MatrixLib.Tests.Operators
 {
     public class BinaryOperatorsTests
     {

@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Matrix\Matrix.csproj" />
+      <ProjectReference Include="..\MatrixLib\MatrixLib.csproj" />
     </ItemGroup>
 
 </Project>

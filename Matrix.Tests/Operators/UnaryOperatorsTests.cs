@@ -1,4 +1,4 @@
-namespace Matrix.Tests.Operators
+namespace MatrixLib.Tests.Operators
 {
     public class UnaryOperatorsTests
     {

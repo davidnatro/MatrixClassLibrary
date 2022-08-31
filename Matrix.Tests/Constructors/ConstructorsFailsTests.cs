@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Matrix.Tests.Constructors
+namespace MatrixLib.Tests.Constructors
 {
     public class ConstructorsFailsTests
     {

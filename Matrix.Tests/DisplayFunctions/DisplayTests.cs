@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using Xunit;
 
-namespace Matrix.Tests.DisplayFunctions
+namespace MatrixLib.Tests.DisplayFunctions
 {
     public class DisplayTests
     {

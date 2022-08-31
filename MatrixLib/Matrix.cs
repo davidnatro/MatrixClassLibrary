@@ -1,13 +1,13 @@
 using System;
 using System.Text;
 
-namespace Matrix
+namespace MatrixLib
 {
     public partial class Matrix : IComparable<Matrix>
     {
         #region Fields
 
-        private double[,] _matrix;
+        private readonly double[,] _matrix;
 
         #endregion
 
