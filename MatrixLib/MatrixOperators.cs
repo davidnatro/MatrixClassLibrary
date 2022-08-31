@@ -6,7 +6,7 @@ namespace MatrixLib
     {
         public static Matrix operator +(Matrix thisMatrix)
         {
-            return new Matrix(thisMatrix._matrix);
+            return new Matrix(thisMatrix);
         }
 
         public static Matrix operator +(Matrix thisMatrix, Matrix otherMatrix)
@@ -215,7 +215,7 @@ namespace MatrixLib
             unchecked
             {
                 int hash = 31;
-                hash = hash * 61 + _matrix.GetHashCode();
+                hash = hash * 61 + _id.GetHashCode();
                 hash = hash * 61 + Rows.GetHashCode();
                 hash = hash * 61 + Columns.GetHashCode();
 

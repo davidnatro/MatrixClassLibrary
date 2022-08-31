@@ -1,14 +1,51 @@
+using System;
+
 namespace MatrixLib
 {
     public partial class Matrix
     {
+        public static Matrix Clone(Matrix matrix)
+        {
+            return new Matrix(matrix);
+        }
+
+        public void Transpose()
+        {
+            var newMatrix = new Matrix(Columns, Rows);
+
+            for (int i = 0; i < newMatrix.Rows; i++)
+            {
+                for (int j = 0; j < newMatrix.Columns; j++)
+                {
+                    newMatrix[i, j] = this[j, i];
+                }
+            }
+
+            _matrix = newMatrix._matrix;
+        }
+
+        public Matrix Transposed()
+        {
+            var transposedMatrix = new Matrix(Columns, Rows);
+
+            for (var i = 0; i < transposedMatrix.Rows; i++)
+            {
+                for (var j = 0; j < transposedMatrix.Columns; j++)
+                {
+                    transposedMatrix[i, j] = this[j, i];
+                }
+            }
+
+            return transposedMatrix;
+        }
+
         public static Matrix Gauss(Matrix matrix)
         {
-            double[,] matrixClone = new double[matrix.Rows, matrix.Rows + 1];
+            var matrixClone = new double[matrix.Rows, matrix.Columns];
 
             for (var i = 0; i < matrix.Rows; i++)
             {
-                for (var j = 0; j < matrix.Rows + 1; j++)
+                for (var j = 0; j < matrix.Columns; j++)
                     matrixClone[i, j] = matrix[i, j];
             }
 
@@ -24,7 +61,9 @@ namespace MatrixLib
                     double K = matrixClone[i, k] / matrixClone[k, k]; //Коэффициент
 
                     for (var j = 0; j < matrix.Rows + 1; j++) //j-номер столбца следующей строки после k
-                        matrixClone[i, j] -= matrixClone[k, j] * K; //Зануление элементов матрицы ниже первого члена, преобразованного в единицу
+                        matrixClone[i, j] -=
+                            matrixClone[k, j] *
+                            K; //Зануление элементов матрицы ниже первого члена, преобразованного в единицу
                 }
 
                 for (var i = 0; i < matrix.Rows; i++)
@@ -47,7 +86,7 @@ namespace MatrixLib
                 }
             }
 
-            return new Matrix(matrixClone);
+            return new Matrix(matrix);
         }
     }
 }

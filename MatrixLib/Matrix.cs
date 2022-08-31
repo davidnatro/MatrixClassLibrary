@@ -7,7 +7,9 @@ namespace MatrixLib
     {
         #region Fields
 
-        private readonly double[,] _matrix;
+        private double[,] _matrix;
+
+        private readonly Guid _id = Guid.NewGuid();
 
         #endregion
 
